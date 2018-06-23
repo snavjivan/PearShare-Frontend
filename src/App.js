@@ -36,7 +36,6 @@ class App extends React.Component {
                   mode="horizontal"
                   theme="light"
               >
-
                 <Menu.Item key="logo">
                   <Link to = "/"><img src={logo} height="40px"></img> &nbsp;&nbsp;PearShare</Link>
                 </Menu.Item>

@@ -11,7 +11,14 @@ class IndivListing extends Component {
     this.state = {
       visible: false,
       confirmLoading: false,
+      token: ""
     }
+  }
+
+  handleChange(e) {
+    this.setState({
+      token: e.target.value
+    });
   }
 
   showModal = () => {
@@ -23,15 +30,33 @@ class IndivListing extends Component {
     this.setState({
       confirmLoading: true,
     });
-    axios.get(BASE_URL + "items/update/"+this.props.data.id).then((_) => {
-      this.props.data.status = "transacted";
-    });
-    setTimeout(() => {
-      this.setState({
-        visible: true,
-        confirmLoading: false,
+    const { data } = this.props;
+    if (data.status === "unsold") {
+      axios.get(BASE_URL + "items/update/" + data.id).then((_) => {
+        this.props.data.status = "transacted";
       });
-    }, 1500);
+      setTimeout(() => {
+        this.setState({
+          visible: true,
+          confirmLoading: false,
+        });
+      }, 1500);
+    }
+    else {
+      const { token } = this.state;
+      axios.get(BASE_URL + "twizo/messageId/1").then((res) => {
+        const messageId = res.data['messageId'];
+        axios.get(BASE_URL + "twizo/check/" + messageId + "/" + token).then((res) => {
+          // Add to blockchain...
+        })
+      });
+      setTimeout(() => {
+        this.setState({
+          visible: false,
+          confirmLoading: false,
+        });
+      }, 1500);
+    }
   }
   handleCancel = () => {
     console.log('Clicked cancel button');
@@ -80,7 +105,9 @@ class IndivListing extends Component {
               <p>Seller: Ben's Bakery</p>
               <p>Description: {data.description}</p>
               <div style={{"display": data.status === "unsold" ? "none" : "block" }}>
-                <p>Authentication Token: <TextField /></p>
+                <p>Authentication Token: 
+                  <TextField value={this.state.token} handleChange={this.handleChange.bind(this)}/>
+                </p>
               </div>
             </div>
           </Modal>
