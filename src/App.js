@@ -4,6 +4,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import { Route, Link } from "react-router-dom";
 import Nav from "./Components/Nav";
 import Homepage from "./Components/Homepage";
+import Balance from "./Components/Balance"
 import Listings from "./Components/Listings";
 import logo from './new-green-circle.png';
 import { Affix, Menu, Icon, Input, Modal, Button, Row, Col } from 'antd';
@@ -55,7 +56,7 @@ class App extends React.Component {
                 <Menu.Item key="login">
                   <Button type="default" onClick={() => this.setModalVisible(true)}><Icon type="login"/>Log In</Button>
                     <Modal
-                      title="Log In / Sign Up"
+                      title="Log In / Sign Up"   
                       wrapClassName="vertical-center-modal"
                       visible={this.state.modalVisible}
                       onOk={() => this.setModalVisible(false)}
@@ -124,6 +125,7 @@ class App extends React.Component {
               </Menu>
           </Affix>
                 <Route exact path="/" component={Homepage}/>
+                <Route path="/balance" component={Balance}/>
                 <Route exact path="/listings" component={Listings}/>
         </div>
       </Router>

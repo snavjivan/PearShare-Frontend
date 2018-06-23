@@ -1,8 +1,13 @@
 @import '~antd/dist/antd.css';
 
-/*background*/
-#particles-js {
-  background-color: #05386B;
+
+/*Whole Container*/
+
+
+/*Background*/
+#particles-js
+{
+  background-color: #FFFFFF;
   background-size: cover;
   background-position: 50% 50%;
   background-repeat: no-repeat;
@@ -63,6 +68,56 @@
 
 #listingsTitle {
   margin-bottom: -30px;
+}
+#registerNow {
+  font-size: 20px;
+  text-align: center;
+
+}
+#registerContainer {
+  margin-top: 10px;
+}
+#loginTitle {
+  text-align: center;
+  color: #4D4A5D;
+  font-size: 9vh;
+}
+/*Footer*/
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #5CDB95;
+  color: #EDF5E1;
+  text-align: center;
+  padding-top: 15px;
+  padding-bottom: 10px;
+
+}
+
+/*Balance*/
+#balanceHeader {
+  font-size: 12vh;
+  text-align: center;
+  color:#EDF5E1;
+}
+
+#balanceText{
+  font-size: 6vh;
+  text-align: center;
+  color:#EDF5E1;
+}
+
+#jacsfirstbox {
+  background-color: #5CDB95;
+  width: 25vw;
+  border-radius: 20px; 
+  width: 300px ;
+  text-align: center; 
+  margin-left: auto ;
+  margin-right: auto ;
+  vertical-align: middle
 }
 
 @keyframes fadein {
