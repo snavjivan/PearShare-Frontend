@@ -83,6 +83,43 @@
   margin-bottom: 20px;
 }
 
+/*Cards*/
+.ant-card-bordered {
+    border: 2px solid #5CDB95;
+}
+
+.ant-card-actions {
+    border-top: 1px solid #5CDB95;
+    background: #5CDB95;
+    zoom: 1;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.ant-card-meta-title {
+    font-size: 20px;
+    text-align: center;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    color: #379683;
+    font-weight: 500;
+}
+
+.ant-card-meta-description {
+    color: #379683;
+    text-align: center;
+}
+
+.ant-card-actions > li {
+    float: left;
+    text-align: center;
+    margin: 12px 0;
+    color: #f6ecdf;
+}
+
 /* Nav */
 .menu {
   background-color: transparent;
@@ -112,12 +149,34 @@
 /*Listings*/
 #listings {
   font-size: 10vh;
+  margin-top: 20px;
   margin-bottom: -10px;
 }
 
 #listingsTitle {
+  background: #f6ecdf;
   margin-bottom: -30px;
 }
+
+#purchaseModalImage {
+  text-align: center;
+}
+
+#purchaseModal {
+  text-align: left;
+  margin-left: 100px;
+  margin-right: 100px;
+  color: #5CDB95;
+}
+
+#f {
+  color: #379683;
+}
+
+#ps {
+  color: #5CDB95;
+}
+
 #registerNow {
   font-size: 20px;
   text-align: center;

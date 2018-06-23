@@ -45,10 +45,6 @@ class App extends React.Component {
                 <Menu.Item key="">
                 </Menu.Item>
 
-                <Menu.Item key="home">
-                  <Link to = "/"><Icon type="home" />Home</Link>
-                </Menu.Item>
-
                 <Menu.Item key="about">
                   <Link to = "/listings"><Icon type="shopping-cart" />View Listings</Link>
                 </Menu.Item>
@@ -57,7 +53,15 @@ class App extends React.Component {
                   <Link to = "/balance"><Icon type="wallet" />Balance</Link>
                 </Menu.Item>
 
-                <Menu.Item key='login'>
+                <Menu.Item style={{float: 'right'}} key="search">
+                  <Input.Search
+                    placeholder="Search Listings"
+                    onSearch={value => console.log(value)}
+                    enterButton
+                  />
+                </Menu.Item>
+
+                <Menu.Item style={{float: 'right'}} key='login'>
                   <a onClick={() => this.setModalVisible(true)}>
                     <Icon type="login"/>Log In
                   </a>
@@ -115,14 +119,6 @@ class App extends React.Component {
                       </Col>
                     </Row>
                   </Modal>
-                </Menu.Item>
-
-                <Menu.Item key="search">
-                  <Input.Search
-                    placeholder="Search Listings"
-                    onSearch={value => console.log(value)}
-                    enterButton
-                  />
                 </Menu.Item>
 
               </Menu>
