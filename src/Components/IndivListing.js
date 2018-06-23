@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Row, Col, Card, Icon, Modal, Button } from 'antd';
+import TextField from './TextField';
 import axios from 'axios';
 import BASE_URL from '../HttpConstants.js';
 
@@ -12,7 +13,7 @@ class IndivListing extends Component {
       confirmLoading: false,
     }
   }
-  
+
   showModal = () => {
     this.setState({
       visible: true,
@@ -54,12 +55,11 @@ class IndivListing extends Component {
             {data.status === "unsold" ? "Buy Now!" : "Transacted!" }
           </div>]}
         >
-          <Card.Meta
-            title={data.title}
-            description={"Price: " + data.price}
-          />
+        <Card.Meta
+          title={data.title}
+          description={"Price: " + data.price}
+        />
         </Card>
-
         <Modal title="Confirm Purchase"
             visible={visible}
             onOk={this.handleOk}
@@ -68,10 +68,10 @@ class IndivListing extends Component {
             footer={[
               <Button key="cancel" onClick={this.handleCancel}>Cancel</Button>,
               <Button key="purchase" type="primary" loading={confirmLoading} onClick={this.handleOk}>
-                {data.status === "unsold" ? "Purchase" : "Transacted"}
+                {data.status === "unsold" ? "Purchase" : "Verify Token"}
               </Button>
             ]}
-          >
+        >
             <div id="purchaseModalImage"><img src={imgSrc} className="rotate90" height="100px" /></div>
             <div id="purchaseModal">
               <h2 id="f">{data.title}</h2>
@@ -79,6 +79,9 @@ class IndivListing extends Component {
               <p>Status: {data.status}</p>
               <p>Seller: Ben's Bakery</p>
               <p>Description: {data.description}</p>
+              <div style={{"display": data.status === "unsold" ? "none" : "block" }}>
+                <p>Authentication Token: <TextField /></p>
+              </div>
             </div>
           </Modal>
       </div>
