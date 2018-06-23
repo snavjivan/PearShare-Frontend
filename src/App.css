@@ -64,10 +64,14 @@
 #listings {
   font-size: 10vh;
   margin-bottom: -10px;
+  background-color: #ffffff;
+  z-index: 10;
 }
 
 #listingsTitle {
+  background-color: #ffffff;
   margin-bottom: -30px;
+  z-index: 10;
 }
 #registerNow {
   font-size: 20px;
