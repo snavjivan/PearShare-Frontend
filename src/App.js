@@ -27,6 +27,7 @@ class App extends React.Component {
     return (
       <Router basename="/">
         <div>
+          <div style={{ background: '#f6ecdf', height: '10px' }}></div>
           <Affix>
               <Menu
                   id="navBar"
@@ -37,11 +38,14 @@ class App extends React.Component {
                   theme="light"
               >
 
-                <Menu.Item key="/">
-                  <Link to = "/"><img src={logo} height="40px"></img> PearShare</Link>
+                <Menu.Item key="logo">
+                  <Link to = "/"><img src={logo} height="40px"></img> &nbsp;&nbsp;PearShare</Link>
                 </Menu.Item>
 
-                <Menu.Item key="/">
+                <Menu.Item key="">
+                </Menu.Item>
+
+                <Menu.Item key="home">
                   <Link to = "/"><Icon type="home" />Home</Link>
                 </Menu.Item>
 
@@ -53,72 +57,71 @@ class App extends React.Component {
                   <Link to = "/balance"><Icon type="wallet" />Balance</Link>
                 </Menu.Item>
 
-                <Menu.Item key="login">
-                  <Button type="default" onClick={() => this.setModalVisible(true)}><Icon type="login"/>Log In</Button>
-                    <Modal
-                      title="Log In / Sign Up"   
-                      wrapClassName="vertical-center-modal"
-                      visible={this.state.modalVisible}
-                      onOk={() => this.setModalVisible(false)}
-                      onCancel={() => this.setModalVisible(false)}
-                    >
-
-                      <Row>
-                        <Col span={10}>
-                          <b>Log In</b>
-                          <br/>
-                          <br/>
-                          <Input
-                            placeholder="Email"
-                            prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
-                          />
-                          <br/>
-                          <br/>
-                          <Input
-                            placeholder="Password"
-                            prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />}
-                          />
-                          <br/>
-                          <br/>
-                          <Button type="primary">Log In!</Button>
-
-                        </Col>
-                        <Col span={4}></Col>
-                        <Col span={10}>
-                          <b>Sign Up</b>
-                          <br/>
-                          <br/>
-                          <Input
-                            placeholder="Charity Name"
-                            prefix={<Icon type="idcard" style={{ color: 'rgba(0,0,0,.25)' }} />}
-                          />
-                          <br/>
-                          <br/>
-                          <Input
-                            placeholder="Email"
-                            prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
-                          />
-                          <br/>
-                          <br/>
-                          <Input
-                            placeholder="Password"
-                            prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />}
-                          />
-                          <br/>
-                          <br/>
-                          <Button type="primary">Sign Up!</Button>
-
-                        </Col>
-                      </Row>
-
-                    </Modal>
+                <Menu.Item key='login'>
+                  <a onClick={() => this.setModalVisible(true)}>
+                    <Icon type="login"/>Log In
+                  </a>
+                  <Modal
+                    title="Log In / Sign Up"
+                    wrapClassName="vertical-center-modal"
+                    visible={this.state.modalVisible}
+                    onOk={() => this.setModalVisible(false)}
+                    onCancel={() => this.setModalVisible(false)}
+                    footer={null}
+                  >
+                    <Row>
+                      <Col span={10}>
+                        <b>Log In</b>
+                        <br/>
+                        <br/>
+                        <Input
+                          placeholder="Email"
+                          prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
+                        />
+                        <br/>
+                        <br/>
+                        <Input
+                          placeholder="Password"
+                          prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />}
+                        />
+                        <br/>
+                        <br/>
+                        <Button type="primary">Log In!</Button>
+                      </Col>
+                      <Col span={4}></Col>
+                      <Col span={10}>
+                        <b>Sign Up</b>
+                        <br/>
+                        <br/>
+                        <Input
+                          placeholder="Charity Name"
+                          prefix={<Icon type="idcard" style={{ color: 'rgba(0,0,0,.25)' }} />}
+                        />
+                        <br/>
+                        <br/>
+                        <Input
+                          placeholder="Email"
+                          prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
+                        />
+                        <br/>
+                        <br/>
+                        <Input
+                          placeholder="Password"
+                          prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />}
+                        />
+                        <br/>
+                        <br/>
+                        <Button type="primary">Sign Up!</Button>
+                      </Col>
+                    </Row>
+                  </Modal>
                 </Menu.Item>
 
                 <Menu.Item key="search">
                   <Input.Search
                     placeholder="Search Listings"
                     onSearch={value => console.log(value)}
-                    style={{ width: 200 }}
+                    enterButton
                   />
                 </Menu.Item>
 

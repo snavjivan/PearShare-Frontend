@@ -5,38 +5,82 @@
 
 
 /*Background*/
+#root {
+  position: relative;
+}
+
 #particles-js
 {
-  background-color: #FFFFFF;
+  background-color: #f6ecdf;
   background-size: cover;
   background-position: 50% 50%;
   background-repeat: no-repeat;
   z-index: -1;
+  /* position: relative; */
+  height: 100%;
+}
+
+/*buttons*/
+.ant-btn-primary {
+    color: #ffffff;
+    background-color: #5CDB95;
+    border-color: #5CDB95;
+}
+.ant-btn-primary:hover {
+    color: #ffffff;
+    background-color: #379683;
+    border-color: #379683;
+}
+.ant-btn-primary:focus {
+    color: #ffffff;
+    background-color: #379683;
+    border-color: #379683;
+}
+.ant-btn-default:hover {
+  color: #5CDB95;
+  border-color: #5CDB95;
+}
+.ant-btn-default:focus {
+  color: #5CDB95;
+  border-color: #5CDB95;
+}
+
+/*inputs*/
+.ant-input {
+    border-color: #5CDB95;
+    outline: 0;
+    -webkit-box-shadow: 0 0 0 2px rgba(87,168,233, 0);
+    box-shadow: 0 0 0 2px rgba(87,168,233, 0);
 }
 
 /*homepage*/
 .title, #description, #listingsTitle {
   text-align: center;
-  color:#EDF5E1;
+  color:#5CDB95;
 }
 #description {
-  font-size:5vh;
-  padding-bottom: 9vh;
+  font-size:4.5vh;
+  margin-bottom: 10px;
 }
 .title {
   font-size: 12vh;
+  margin-top: 5px;
   margin-bottom: -5px;
 }
 .share {
-  color:#5CDB95;
+  color:#379683;
+}
+.motto2 {
+  color:#379683;
 }
 #homeLogo {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 55vh;
-  height: 55vh;
-  margin-top: 40px;
+  width: 40vh;
+  height: 40vh;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 
 /* Nav */
@@ -58,6 +102,11 @@
 #extension {
   position: absolute;
   right: 0px;
+}
+
+.ant-menu-horizontal > .ant-menu-item:hover, .ant-menu-horizontal > .ant-menu-submenu:hover, .ant-menu-horizontal > .ant-menu-item-active, .ant-menu-horizontal > .ant-menu-submenu-active, .ant-menu-horizontal > .ant-menu-item-open, .ant-menu-horizontal > .ant-menu-submenu-open, .ant-menu-horizontal > .ant-menu-item-selected, .ant-menu-horizontal > .ant-menu-submenu-selected {
+    border-bottom: 2px solid #379683;
+    color: #379683;
 }
 
 /*Listings*/
@@ -89,7 +138,7 @@
   bottom: 0;
   width: 100%;
   background-color: #5CDB95;
-  color: #EDF5E1;
+  color: #379683;
   text-align: center;
   padding-top: 15px;
   padding-bottom: 10px;
@@ -100,21 +149,21 @@
 #balanceHeader {
   font-size: 12vh;
   text-align: center;
-  color:#EDF5E1;
+  color:#379683;
 }
 
 #balanceText{
   font-size: 6vh;
   text-align: center;
-  color:#EDF5E1;
+  color:#379683;
 }
 
 #jacsfirstbox {
   background-color: #5CDB95;
   width: 25vw;
-  border-radius: 20px; 
+  border-radius: 20px;
   width: 300px ;
-  text-align: center; 
+  text-align: center;
   margin-left: auto ;
   margin-right: auto ;
   vertical-align: middle

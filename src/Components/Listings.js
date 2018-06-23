@@ -5,7 +5,7 @@ class Listings extends Component {
   render() {
     return (
       <div id="listings">
-        <h5 id="listingsTitle"><span class="share">Current</span> Listings</h5>
+        <h5 id="listingsTitle">Current <span class="share">Listings</span></h5>
           <div style={{ padding: '50px' }}>
             <Row gutter={24}>
               <Col span={8}>
