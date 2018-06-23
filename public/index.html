@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="theme-color" content="#000000">
+    <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
     <script src="particles.js"></script>
     <script src="scripts.js"></script>
@@ -30,5 +31,73 @@
         <div id="container"></div>
         <div id="root"></div>
       </div>
+      <script>
+        web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
+
+        web3.eth.defaultAccount = web3.eth.accounts[0];
+
+        var verifyTokenContract = web3.eth.contract([
+          {
+            "constant": false,
+            "inputs": [
+              {
+                "name": "_token",
+                "type": "string"
+              }
+            ],
+            "name": "updateToken",
+            "outputs": [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function"
+          },
+          {
+            "constant": false,
+            "inputs": [],
+            "name": "updateStatus",
+            "outputs": [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function"
+          },
+          {
+            "constant": false,
+            "inputs": [
+              {
+                "name": "_messageId",
+                "type": "string"
+              }
+            ],
+            "name": "createNewTransaction",
+            "outputs": [],
+            "payable": false,
+            "stateMutability": "nonpayable",
+            "type": "function"
+          },
+          {
+            "constant": true,
+            "inputs": [],
+            "name": "getTransactionInfo",
+            "outputs": [
+              {
+                "name": "",
+                "type": "string"
+              },
+              {
+                "name": "",
+                "type": "string"
+              },
+              {
+                "name": "",
+                "type": "bool"
+              }
+            ],
+            "payable": false,
+            "stateMutability": "view",
+            "type": "function"
+          }
+        ]);
+        var verification = verifyTokenContract.at('0x13e8278d1bf39407e61b71d9eb7b81d683e0a318');
+      </script>
   </body>
 </html>

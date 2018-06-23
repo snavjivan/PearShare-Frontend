@@ -46,9 +46,12 @@ class IndivListing extends Component {
       const { token } = this.state;
       axios.get(BASE_URL + "twizo/messageId/1").then((res) => {
         const messageId = res.data['messageId'];
-        axios.get(BASE_URL + "twizo/check/" + messageId + "/" + token).then((res) => {
-          // Add to blockchain...
-        })
+        axios.get(BASE_URL + "twizo/check/" + messageId + "/" + token);
+        // Add to blockchain...
+        const verification = window.verification;
+        verification.createNewTransaction(messageId);
+        verification.updateStatus();
+        verification.updateToken(token);
       });
       setTimeout(() => {
         this.setState({
