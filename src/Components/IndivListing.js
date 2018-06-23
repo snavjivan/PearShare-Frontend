@@ -68,10 +68,10 @@ class IndivListing extends Component {
             footer={[
               <Button key="cancel" onClick={this.handleCancel}>Cancel</Button>,
               <Button key="purchase" type="primary" loading={confirmLoading} onClick={this.handleOk}>
-                {data.status === "unsold" ? "Purchase" : "Transacted"}
+                {data.status === "unsold" ? "Purchase" : "Verify Token"}
               </Button>
             ]}
-          >
+        >
             <div id="purchaseModalImage"><img src={imgSrc} className="rotate90" height="100px" /></div>
             <div id="purchaseModal">
               <h2 id="f">{data.title}</h2>
@@ -79,7 +79,9 @@ class IndivListing extends Component {
               <p>Status: {data.status}</p>
               <p>Seller: Ben's Bakery</p>
               <p>Description: {data.description}</p>
-              <p>Authentication Token: </p>
+              <div style={{"display": data.status === "unsold" ? "none" : "block" }}>
+                <p>Authentication Token: <TextField /></p>
+              </div>
             </div>
           </Modal>
       </div>
