@@ -1,0 +1,160 @@
+@import '~antd/dist/antd.css';
+
+/*Whole Container*/
+
+
+/*Background*/
+#particles-js
+{
+  background-color: #05386B;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+
+/*Homepage*/
+
+.title, #description, #leaderTitle {
+  text-align: center;
+  color:#EDF5E1;
+}
+#description {
+  font-size:5vh;
+  padding-bottom: 9vh;
+}
+.title {
+  font-size: 12vh;
+  margin-bottom: -5px;
+}
+.buddy {
+  color:#5CDB95;
+}
+#homeLogo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 55vh;
+  height: 55vh;
+  margin-top: 40px;
+}
+
+#homeLogoAbout {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 25vh;
+  height: 25vh;
+  margin-top: 45px;
+}
+
+/* Nav */
+.menu {
+  background-color: transparent;
+  border: 0px;
+  font-size: 19px;
+  opacity: 0.97;
+}
+
+#navBar > li > a {
+  color: black;
+}
+
+.ant-menu-dark .ant-menu-item {
+  color: black;
+}
+
+#extension {
+  position: absolute;
+  right: 0px;
+}
+
+#login {
+  right: 0;
+}
+/*About Page*/
+#aboutdescription {
+  color:#EDF5E1;
+  font-size: 2.6vh;
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  margin-left: 10vw;
+  margin-right: 10vw;
+}
+.aboutMain {
+
+}
+#buttonSignUp {
+  text-align: center;
+  margin: auto;
+}
+#buttonContainer {
+  width: 8%;
+  margin: auto;
+}
+
+/*Leaderboard*/
+#leaderTitle {
+  font-size: 10vh;
+  margin-bottom: -10px;
+}
+
+#loginForm {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10vh;
+  width: 30vw;
+  background-color: #5CDB95;
+  padding: 15px;
+}
+#loginbutton {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+#registerNow {
+  font-size: 20px;
+  text-align: center;
+
+}
+#registerContainer {
+  margin-top: 10px;
+}
+#loginTitle {
+  text-align: center;
+  color: #4D4A5D;
+  font-size: 9vh;
+}
+/*Footer*/
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #5CDB95;
+  color: #EDF5E1;
+  text-align: center;
+  padding-top: 15px;
+  padding-bottom: 10px;
+
+}
+
+
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@-moz-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
