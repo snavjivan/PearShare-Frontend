@@ -4,10 +4,9 @@ import { BrowserRouter as Router } from "react-router-dom";
 import { Route, Link } from "react-router-dom";
 import Nav from "./Components/Nav";
 import Homepage from "./Components/Homepage";
-import Balance from "./Components/Balance"
 import Listings from "./Components/Listings";
 import logo from './new-green-circle.png';
-import { Affix, Menu, Icon, Input, Modal, Button, Row, Col } from 'antd';
+import { Affix, Menu, Icon, Input, Modal, Button, Row, Col, Tooltip } from 'antd';
 
 
 class App extends React.Component {
@@ -50,7 +49,9 @@ class App extends React.Component {
                 </Menu.Item>
 
                 <Menu.Item key="balance">
-                  <Link to = "/balance"><Icon type="wallet" />Balance</Link>
+                  <Tooltip placement="bottomRight" title={"This is the amount you have available to spend."}>
+                    <Link to = "/"><Icon type="wallet" />Balance = $103.97</Link>
+                  </Tooltip>
                 </Menu.Item>
 
                 <Menu.Item style={{float: 'right'}} key="search">
@@ -124,7 +125,6 @@ class App extends React.Component {
               </Menu>
           </Affix>
                 <Route exact path="/" component={Homepage}/>
-                <Route path="/balance" component={Balance}/>
                 <Route exact path="/listings" component={Listings}/>
         </div>
       </Router>
