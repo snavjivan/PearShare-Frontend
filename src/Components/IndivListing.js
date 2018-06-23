@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Row, Col, Card, Icon, Modal, Button } from 'antd';
+import TextField from './TextField';
 
 class IndivListing extends Component {
   state = {
@@ -63,6 +64,7 @@ class IndivListing extends Component {
             <p>Status: </p>
             <p>Seller: </p>
             <p>Description: </p>
+            <p>Authentication Token: </p>
           </div>
         </Modal>
 
