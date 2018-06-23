@@ -7,8 +7,7 @@ class Homepage extends React.Component {
      <div class="home">
         <h1 class="title">Pear<span class="buddy">Share</span></h1>
         <img class="title" id="homeLogo" src={logo} alt="logo"></img>
-        <img class="title" id="homeLogo" src={logo} alt="logo"></img>
-       <div class="title" id="description">Words</div>
+       <div class="title" id="description">Squeeze the pear, share the juice</div>
         <div class="homeButtons">
 
         </div>

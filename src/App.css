@@ -6,7 +6,7 @@
 /*Background*/
 #particles-js
 {
-  background-color: #05386B;
+  background-color: #FFFFFF;
   background-size: cover;
   background-position: 50% 50%;
   background-repeat: no-repeat;
@@ -142,7 +142,29 @@
 
 }
 
+/*Balance*/
+#balanceHeader {
+  font-size: 12vh;
+  text-align: center;
+  color:#EDF5E1;
+}
 
+#balanceText{
+  font-size: 6vh;
+  text-align: center;
+  color:#EDF5E1;
+}
+
+#jacsfirstbox {
+  background-color: #5CDB95;
+  width: 25vw;
+  border-radius: 20px; 
+  width: 300px ;
+  text-align: center; 
+  margin-left: auto ;
+  margin-right: auto ;
+  vertical-align: middle
+}
 
 @keyframes fadein {
   from { opacity: 0; }
