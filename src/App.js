@@ -4,6 +4,8 @@ import { BrowserRouter as Router } from "react-router-dom";
 import { Route, Link } from "react-router-dom";
 import Nav from "./Components/Nav";
 import Homepage from "./Components/Homepage";
+import Balance from "./Components/Balance"
+import Listings from "./Components/Listings";
 import logo from './new-green-circle.png';
 import { Affix, Menu, Icon, Input, Modal, Button, Row, Col } from 'antd';
 
@@ -35,16 +37,16 @@ class App extends React.Component {
                   theme="light"
               >
 
-                <Menu.Item key="home">
+                <Menu.Item key="/">
                   <Link to = "/"><img src={logo} height="40px"></img> PearShare</Link>
                 </Menu.Item>
 
-                <Menu.Item key="home">
+                <Menu.Item key="/">
                   <Link to = "/"><Icon type="home" />Home</Link>
                 </Menu.Item>
 
                 <Menu.Item key="about">
-                  <Link to = "/about"><Icon type="shopping-cart" />View Listings</Link>
+                  <Link to = "/listings"><Icon type="shopping-cart" />View Listings</Link>
                 </Menu.Item>
 
                 <Menu.Item key="balance">
@@ -54,7 +56,7 @@ class App extends React.Component {
                 <Menu.Item key="login">
                   <Button type="default" onClick={() => this.setModalVisible(true)}><Icon type="login"/>Log In</Button>
                     <Modal
-                      title="Log In / Sign Up"
+                      title="Log In / Sign Up"   
                       wrapClassName="vertical-center-modal"
                       visible={this.state.modalVisible}
                       onOk={() => this.setModalVisible(false)}
@@ -122,7 +124,9 @@ class App extends React.Component {
 
               </Menu>
           </Affix>
-                <Route path="/" component={Homepage}/>
+                <Route exact path="/" component={Homepage}/>
+                <Route path="/balance" component={Balance}/>
+                <Route exact path="/listings" component={Listings}/>
         </div>
       </Router>
     )
