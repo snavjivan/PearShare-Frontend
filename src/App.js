@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './App.css';
 import { BrowserRouter as Router } from "react-router-dom";
 import { Route, Link } from "react-router-dom";
-import Nav from "./Components/Nav";
 import Homepage from "./Components/Homepage";
 import Listings from "./Components/Listings";
 import logo from './new-green-circle.png';
