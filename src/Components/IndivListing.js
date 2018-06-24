@@ -76,7 +76,7 @@ class IndivListing extends Component {
 
 // <img src="https://nuts.com/images/auto/510x340/assets/e897e6ddc2621543.png" />
     return (
-      <div>
+      <div style={{marginBottom: "30px"}}>
         <Card
           cover={<img src={imgSrc} />}
           actions={[<div onClick={this.showModal}><Icon type="shopping-cart" style={{marginRight: "10px"}} />
