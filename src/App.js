@@ -11,6 +11,9 @@ import { Affix, Menu, Icon, Input, Modal, Button, Row, Col, Tooltip } from 'antd
 class App extends React.Component {
   constructor() {
     super();
+    if (window.localStorage.getItem("balance") === null) {
+      window.localStorage.setItem("balance", 103.97);
+    }
     this.state = {
       modalVisible: false,
     }
@@ -48,7 +51,7 @@ class App extends React.Component {
 
                 <Menu.Item key="balance">
                   <Tooltip placement="bottomRight" title={"This is the amount you have available to spend."}>
-                    <Link to = "/"><Icon type="wallet" />Balance = $103.97</Link>
+                    <Link to = "/"><Icon type="wallet" />Balance = ${window.localStorage.getItem("balance")}</Link>
                   </Tooltip>
                 </Menu.Item>
 

@@ -52,6 +52,7 @@ class IndivListing extends Component {
         verification.createNewTransaction(messageId);
         verification.updateStatus();
         verification.updateToken(token);
+        window.localStorage.setItem("balance", parseInt(window.localStorage.getItem("balance")) - this.props.data.price);
       });
       setTimeout(() => {
         this.setState({
