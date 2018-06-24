@@ -16,6 +16,7 @@ class App extends React.Component {
     }
     this.state = {
       modalVisible: false,
+      updateStateNow: false,
     }
   }
 
@@ -23,8 +24,13 @@ class App extends React.Component {
     this.setState({ modalVisible });
   }
 
-  render() {
+  componentDidMount() {
+    setInterval(function() {
+      this.setState({ updateStateNow: !this.state.updateStateNow });
+    }.bind(this), 15000)
+  }
 
+  render() {  
     return (
       <Router basename="/">
         <div>
@@ -63,7 +69,7 @@ class App extends React.Component {
                   />
                 </Menu.Item>
 
-                <Menu.Item style={{float: 'right'}} key='login'>
+                <Menu.Item style={{float: 'right', visibility: 'hidden'}} key='login'>
                   <a onClick={() => this.setModalVisible(true)}>
                     <Icon type="login"/>Log In
                   </a>

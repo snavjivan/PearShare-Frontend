@@ -259,3 +259,34 @@
   from { opacity: 0; }
   to   { opacity: 1; }
 }
+
+#purchaseModal, #purchaseModalImage {
+  background-color: #f6ecdf;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 10px;
+  box-shadow: #5CDB95;
+}
+
+#purchaseModalImage {
+  display: block;
+  max-width:200px;
+  max-height:180px;
+  width: auto;
+  height: auto;
+  margin-top: 160px;
+  margin-bottom: -90px;
+}
+
+.ant-modal-body {
+  background-color: #5CDB95;
+}
+
+#purchaseModal > h2 {
+  color: rgba(0, 0, 0, 0.7);
+  text-align: center;
+}
+
+#purchaseModal > p {
+  color: rgba(0, 0, 0, 0.65);
+}

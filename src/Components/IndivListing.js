@@ -47,12 +47,12 @@ class IndivListing extends Component {
       axios.get(BASE_URL + "twizo/messageId/1").then((res) => {
         const messageId = res.data['messageId'];
         axios.get(BASE_URL + "twizo/check/" + messageId + "/" + token);
+        window.localStorage.setItem("balance", parseInt(window.localStorage.getItem("balance")) - this.props.data.price);
         // Add to blockchain...
         const verification = window.verification;
         verification.createNewTransaction(messageId);
         verification.updateStatus();
         verification.updateToken(token);
-        window.localStorage.setItem("balance", parseInt(window.localStorage.getItem("balance")) - this.props.data.price);
       });
       setTimeout(() => {
         this.setState({
@@ -74,8 +74,6 @@ class IndivListing extends Component {
     const { data } = this.props;
     console.log(data);
     const imgSrc = "data:image/png;base64," + data.image_b64_addr;
-
-// <img src="https://nuts.com/images/auto/510x340/assets/e897e6ddc2621543.png" />
     return (
       <div style={{marginBottom: "30px"}}>
         <Card
@@ -86,7 +84,7 @@ class IndivListing extends Component {
         >
         <Card.Meta
           title={data.title}
-          description={"Price: " + data.price}
+          description={"Price: $" + data.price}
         />
         </Card>
         <Modal title="Confirm Purchase"
@@ -101,20 +99,22 @@ class IndivListing extends Component {
               </Button>
             ]}
         >
-            <div id="purchaseModalImage"><img src={imgSrc} className="rotate90" height="100px" /></div>
+          <div className="rotate90">
+            <img src={imgSrc} id="purchaseModalImage" height="25%" width="60%" />
+          </div>
             <div id="purchaseModal">
-              <h2 id="f">{data.title}</h2>
-              <p>Price: {data.price}</p>
-              <p>Status: {data.status}</p>
-              <p>Seller: Ben's Bakery</p>
-              <p>Description: {data.description}</p>
+              <h2 id="f"><i>{data.title}</i></h2>
+              <p><b>Price:</b> {data.price}</p>
+              <p><b>Status:</b> {data.status}</p>
+              <p><b>Seller:</b> Ben's Bakery</p>
+              <p><b>Description:</b> {data.description}</p>
               <div style={{"display": data.status === "unsold" ? "none" : "block" }}>
                 <p>Authentication Token: 
                   <TextField value={this.state.token} handleChange={this.handleChange.bind(this)}/>
                 </p>
               </div>
             </div>
-          </Modal>
+        </Modal>
       </div>
     );
   }
